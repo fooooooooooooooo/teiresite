@@ -26,12 +26,18 @@ $primary-invert: $pink-invert;
 // 4. Import the rest of Bulma
 */
 
-@import "../../node_modules/bulma/sass/utilities/initial-variables";
-
 $bvloo: #3ca1e9;
 $bvloo-invert: #fff;
 
 $primary: $bvloo;
 $primary-invert: $bvloo-invert;
 
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+
+$menu-item-color: $bvloo-invert;
+
+$menu-item-hover-color: $text-strong;
+$menu-item-hover-background-color: transparent;
+
+@import "../../node_modules/bulma/sass/components/menu.sass";
 @import "../../node_modules/bulma/bulma";

@@ -18,6 +18,234 @@ $primary-invert: $pink-invert;
 
 // 4. Import the rest of Bulma
 */
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.delete, .modal-close, .is-unselectable, .button, .file, .breadcrumb, .pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis, .tabs {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.select:not(.is-multiple):not(.is-loading)::after, .navbar-link:not(.is-arrowless)::after {
+  border: 3px solid transparent;
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  content: " ";
+  display: block;
+  height: 0.625em;
+  margin-top: -0.4375em;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 0.625em; }
+
+.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
+.subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .list:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
+  margin-bottom: 1.5rem; }
+
+.delete, .modal-close {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(10, 10, 10, 0.2);
+  border: none;
+  border-radius: 290486px;
+  cursor: pointer;
+  pointer-events: auto;
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 0;
+  height: 20px;
+  max-height: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  outline: none;
+  position: relative;
+  vertical-align: top;
+  width: 20px; }
+  .delete::before, .modal-close::before, .delete::after, .modal-close::after {
+    background-color: white;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center; }
+  .delete::before, .modal-close::before {
+    height: 2px;
+    width: 50%; }
+  .delete::after, .modal-close::after {
+    height: 50%;
+    width: 2px; }
+  .delete:hover, .modal-close:hover, .delete:focus, .modal-close:focus {
+    background-color: rgba(10, 10, 10, 0.3); }
+  .delete:active, .modal-close:active {
+    background-color: rgba(10, 10, 10, 0.4); }
+  .is-small.delete, .is-small.modal-close {
+    height: 16px;
+    max-height: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    min-width: 16px;
+    width: 16px; }
+  .is-medium.delete, .is-medium.modal-close {
+    height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    width: 24px; }
+  .is-large.delete, .is-large.modal-close {
+    height: 32px;
+    max-height: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    width: 32px; }
+
+.button.is-loading::after, .loader, .select.is-loading::after, .control.is-loading::after {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid #dbdbdb;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em; }
+
+.is-overlay, .image.is-square img,
+.image.is-square .has-ratio, .image.is-1by1 img,
+.image.is-1by1 .has-ratio, .image.is-5by4 img,
+.image.is-5by4 .has-ratio, .image.is-4by3 img,
+.image.is-4by3 .has-ratio, .image.is-3by2 img,
+.image.is-3by2 .has-ratio, .image.is-5by3 img,
+.image.is-5by3 .has-ratio, .image.is-16by9 img,
+.image.is-16by9 .has-ratio, .image.is-2by1 img,
+.image.is-2by1 .has-ratio, .image.is-3by1 img,
+.image.is-3by1 .has-ratio, .image.is-4by5 img,
+.image.is-4by5 .has-ratio, .image.is-3by4 img,
+.image.is-3by4 .has-ratio, .image.is-2by3 img,
+.image.is-2by3 .has-ratio, .image.is-3by5 img,
+.image.is-3by5 .has-ratio, .image.is-9by16 img,
+.image.is-9by16 .has-ratio, .image.is-1by2 img,
+.image.is-1by2 .has-ratio, .image.is-1by3 img,
+.image.is-1by3 .has-ratio, .modal, .modal-background, .hero-video {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.button, .input, .textarea, .select select, .file-cta,
+.file-name, .pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  vertical-align: top; }
+  .button:focus, .input:focus, .textarea:focus, .select select:focus, .file-cta:focus,
+  .file-name:focus, .pagination-previous:focus,
+  .pagination-next:focus,
+  .pagination-link:focus,
+  .pagination-ellipsis:focus, .is-focused.button, .is-focused.input, .is-focused.textarea, .select select.is-focused, .is-focused.file-cta,
+  .is-focused.file-name, .is-focused.pagination-previous,
+  .is-focused.pagination-next,
+  .is-focused.pagination-link,
+  .is-focused.pagination-ellipsis, .button:active, .input:active, .textarea:active, .select select:active, .file-cta:active,
+  .file-name:active, .pagination-previous:active,
+  .pagination-next:active,
+  .pagination-link:active,
+  .pagination-ellipsis:active, .is-active.button, .is-active.input, .is-active.textarea, .select select.is-active, .is-active.file-cta,
+  .is-active.file-name, .is-active.pagination-previous,
+  .is-active.pagination-next,
+  .is-active.pagination-link,
+  .is-active.pagination-ellipsis {
+    outline: none; }
+  .button[disabled], .input[disabled], .textarea[disabled], .select select[disabled], .file-cta[disabled],
+  .file-name[disabled], .pagination-previous[disabled],
+  .pagination-next[disabled],
+  .pagination-link[disabled],
+  .pagination-ellipsis[disabled],
+  fieldset[disabled] .button,
+  fieldset[disabled] .input,
+  fieldset[disabled] .textarea,
+  fieldset[disabled] .select select,
+  .select fieldset[disabled] select,
+  fieldset[disabled] .file-cta,
+  fieldset[disabled] .file-name,
+  fieldset[disabled] .pagination-previous,
+  fieldset[disabled] .pagination-next,
+  fieldset[disabled] .pagination-link,
+  fieldset[disabled] .pagination-ellipsis {
+    cursor: not-allowed; }
+
+.menu {
+  font-size: 1rem; }
+  .menu.is-small {
+    font-size: 0.75rem; }
+  .menu.is-medium {
+    font-size: 1.25rem; }
+  .menu.is-large {
+    font-size: 1.5rem; }
+
+.menu-list {
+  line-height: 1.25; }
+  .menu-list a {
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    padding: 0.5em 0.75em; }
+    .menu-list a:hover {
+      background-color: transparent;
+      color: #363636; }
+    .menu-list a.is-active {
+      background-color: #3273dc;
+      color: #fff; }
+  .menu-list li ul {
+    border-left: 1px solid #dbdbdb;
+    margin: 0.75em;
+    padding-left: 0.75em; }
+
+.menu-label {
+  color: #7a7a7a;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+  .menu-label:not(:first-child) {
+    margin-top: 1em; }
+  .menu-label:not(:last-child) {
+    margin-bottom: 1em; }
+
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -4035,11 +4263,11 @@ a.list-item {
   line-height: 1.25; }
   .menu-list a {
     border-radius: 2px;
-    color: #4a4a4a;
+    color: #fff;
     display: block;
     padding: 0.5em 0.75em; }
     .menu-list a:hover {
-      background-color: whitesmoke;
+      background-color: transparent;
       color: #363636; }
     .menu-list a.is-active {
       background-color: #3273dc;
