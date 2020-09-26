@@ -30,3 +30,35 @@ html {
 .menu-list a {
     font-weight: 500;
 }
+
+.menu-burger {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+
+    margin: 7px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-burger:active {
+    background: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.menu-burger:hover {
+    transition: 0.2s;
+}
+
+.menu {
+    position: absolute;
+    left: -200px;
+    transition: 0.5s;
+}
+
+.menu.is-visible {
+    left: 24px;
+    transition: 0.5s;
+}

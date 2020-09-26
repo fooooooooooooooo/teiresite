@@ -1,5 +1,11 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Hello Bulma!');
+  let burger = document.getElementById('menu-button');
+
+  burger.addEventListener('click', () => {
+    let menu = document.getElementById('menu');
+
+    menu.classList.toggle('is-visible');
+  });
 });
