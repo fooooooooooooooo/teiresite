@@ -279,10 +279,11 @@ function drawSnakePart(snakePart) {
  * @param { object } event - The keydown event
  */
 function changeDirection(event) {
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const LEFT_KEY = "ArrowLeft";
+    const RIGHT_KEY = "ArrowRight";
+    const UP_KEY = "ArrowUp";
+    const DOWN_KEY = "ArrowDown";
+
     /**
      * Prevent the snake from reversing
      * Example scenario:
@@ -292,26 +293,26 @@ function changeDirection(event) {
     if (changingDirection) return;
     changingDirection = true;
 
-    const keyPressed = event.keyCode;
+    const keyPressed = event.code;
 
     const goingUp = dy === -gridSize;
     const goingDown = dy === gridSize;
     const goingRight = dx === gridSize;
     const goingLeft = dx === -gridSize;
 
-    if (keyPressed === LEFT_KEY && !goingRight) {
+    if ((keyPressed === LEFT_KEY || keyPressed === "KeyA") && !goingRight) {
         dx = -gridSize;
         dy = 0;
     }
-    if (keyPressed === UP_KEY && !goingDown) {
+    if ((keyPressed === UP_KEY || keyPressed === "KeyW") && !goingDown) {
         dx = 0;
         dy = -gridSize;
     }
-    if (keyPressed === RIGHT_KEY && !goingLeft) {
+    if ((keyPressed === RIGHT_KEY || keyPressed === "KeyD") && !goingLeft) {
         dx = gridSize;
         dy = 0;
     }
-    if (keyPressed === DOWN_KEY && !goingUp) {
+    if ((keyPressed === DOWN_KEY || keyPressed === "KeyS") && !goingUp) {
         dx = 0;
         dy = gridSize;
     }
