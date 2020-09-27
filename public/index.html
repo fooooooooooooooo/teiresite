@@ -11,7 +11,21 @@
 </head>
 
 <body class="main">
-  <section class="hero is-primary is-fullheight teire-container">
+  <section id="hero" class="hero is-primary is-fullheight teire-container">
+    <canvas id="gameCanvas" class="no-click" width="100vw" height="100vh"></canvas>
+    <div id="score" class="title hidden">0</div>
+    <div id="game-over-container" class="game-over-container hidden">
+      <div id="game-over-text" class="game-over title">Game Over</div>
+      <div id="game-over-score" class="game-over-score subtitle">Score: 0</div>
+      <div id="game-over-highscore" class="game-over-highscore subtitle">High Score: 0</div>
+      <button id="game-over-retry" class="button is-primary game-over-retry">
+        <span>Retry?</span>
+        <span class="icon">
+          <i class="fas fa-undo"></i>
+        </span>
+      </button>
+      <div id="game-over-cover" class="game-over-cover no-click hidden"></div>
+    </div>
     <a id="menu-button" role="button" class="menu-burger" aria-label="menu" aria-expanded="false">
       <i id="burger-icon" class="fas fa-bars"></i>
     </a>
@@ -23,7 +37,7 @@
           <li><a href="/thing2">Thing 2</a></li>
         </ul>
       </aside>
-      <div class="container has-text-centered">
+      <div id="teire" class="container has-text-centered">
         <h1 class="title">
           Teire
         </h1>
@@ -49,6 +63,7 @@
   </footer>
   <script src="https://kit.fontawesome.com/4d77eed3de.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="lib/main.js"></script>
+  <script type="text/javascript" src="lib/snake.js"></script>
 </body>
 
 </html>
