@@ -234,9 +234,9 @@ function randomTen(min, max) {
  */
 function createFood() {
     // Generate a random number the food x-coordinate
-    foodX = randomTen(0, gameCanvas.width - gridSize);
+    foodX = randomTen(0, gameCanvas.width - (gridSize * 2));
     // Generate a random number for the food y-coordinate
-    foodY = randomTen(0, gameCanvas.height - gridSize);
+    foodY = randomTen(0, gameCanvas.height - (gridSize * 2));
 
     // if the new food location is where the snake currently is, generate a new food location
     snake.forEach(function isFoodOnSnake(part) {

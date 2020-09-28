@@ -145,7 +145,6 @@ function stopKeys() {
     false);
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
   changeColor();
   let burgerButton = document.getElementById('menu-button');
