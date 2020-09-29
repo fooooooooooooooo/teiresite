@@ -161,3 +161,24 @@ html {
 .no-click {
     pointer-events: none;
 }
+
+.marquee {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    transition: opacity .5s ease-in-out;
+}
+
+.marquee.hidden {
+    opacity: 0;
+}
+
+a.subtitle {
+    text-decoration: underline;
+}
+
+.teire-yep {
+    margin-bottom: 5px !important;
+}

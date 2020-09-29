@@ -48,8 +48,6 @@ const colors = [
   "#FFF5BA"
 ]
 
-let snakeRunning = false;
-
 document.title = `teire.${extensions[Math.floor(Math.random() * extensions.length)]}`
 
 let root = document.documentElement;
@@ -118,6 +116,7 @@ function changeColor() {
     root.style.setProperty('--primary-text-color', '#000');
   }
 }
+
 function stopKeys() {
   var keys = {};
   window.addEventListener("keydown",
@@ -127,12 +126,7 @@ function stopKeys() {
         case "ArrowUp": case "ArrowDown": case "ArrowLeft": case "ArrowRight": // Arrow keys
         case "Space": // Space
           e.preventDefault();
-          if (!snakeRunning) {
-            snakeRunning = true;
-            init();
-            document.getElementById('teire').classList.toggle('snaked');
-            document.getElementById('score').classList.toggle('hidden');
-          }
+          triggerGame();
           break;
         default: break; // do not block other keys
       }

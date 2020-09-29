@@ -1,3 +1,27 @@
+/* 
+MIT License
+
+Copyright (c) 2019 Panayiotis Nicolaou
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 const GAME_SPEED = 100; // Lower is faster
 const CANVAS_BORDER_COLOUR = 'transparent';
 const CANVAS_BACKGROUND_COLOUR = "transparent";
@@ -92,15 +116,16 @@ function toggleGameOverVisibility() {
 }
 
 function getHighScore() {
-    let hs = getCookie("highScore");
-    if (hs == null || hs == undefined) {
+    let hs = parseInt(getCookie("highScore"));
+    if (hs == null || hs == undefined || isNaN(hs)) {
         return 0;
     }
-    return parseInt(hs);
+    return hs;
 }
 
 function updateHighScore(s) {
-    if (getHighScore() < s)
+    let hs = parseInt(getHighScore());
+    if (isNaN(hs) || hs < s)
         setCookie('highScore', score);
 }
 

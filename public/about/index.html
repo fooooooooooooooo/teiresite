@@ -6,15 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>teire.exe</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/mainnt.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/mainnt.css">
 </head>
 
 <body class="main">
-  <div id="snakePage" hidden>true</div>
+  <div id="snakePage" hidden>false</div>
+  <div id="astroidsPage" hidden>true</div>
   <section id="hero" class="hero is-primary is-fullheight teire-container">
-    <canvas id="gameCanvas" class="no-click" width="100vw" height="100vh"></canvas>
+    <canvas id="gameCanvas" class="no-click" width="100px" height="100px"></canvas>
     <div id="score" class="title hidden">0</div>
+
     <div id="game-over-container" class="game-over-container hidden">
       <div id="game-over-text" class="game-over title">Game Over</div>
       <div id="game-over-score" class="game-over-score subtitle">Score: 0</div>
@@ -25,7 +27,6 @@
           <i class="fas fa-undo"></i>
         </span>
       </button>
-      <div id="game-over-cover" class="game-over-cover no-click hidden"></div>
     </div>
     <a id="menu-button" role="button" class="menu-burger" aria-label="menu" aria-expanded="false">
       <i id="burger-icon" class="fas fa-bars"></i>
@@ -34,17 +35,17 @@
       <aside id="menu" class="menu">
         <ul class="menu-list">
           <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/thing1">Thing 1</a></li>
           <li><a href="/thing2">Thing 2</a></li>
         </ul>
       </aside>
-      <div id="teire" class="container has-text-centered no-click">
-        <h1 class="title">
-          Teire
-        </h1>
-        <h2 id="widepeepo" class="subtitle">
-          widepeepoHappy
+      <div id="marquee" class="marquee container has-text-centered">
+        <h2 class="subtitle teire-yep">
+          Teire#4823
         </h2>
+        <a href="mailto:teire@tei.re" class="subtitle">
+          teire@tei.re
+        </a>
       </div>
     </div>
   </section>
@@ -63,9 +64,12 @@
     </div>
   </footer>
   <script src="https://kit.fontawesome.com/4d77eed3de.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="lib/snak.js"></script>
-  <script type="text/javascript" src="lib/main.js"></script>
-  <script type="text/javascript" src="lib/snake.js"></script>
+  <script type="text/javascript" src="../lib/jquery-1.4.1.min.js"></script>
+  <script type="text/javascript" src="../lib/vector_battle_regular.typeface.js"></script>
+  <script type="text/javascript" src="../lib/marquee.js"></script>
+  <script type="text/javascript" src="../lib/about.js"></script>
+  <script type="text/javascript" src="../lib/main.js"></script>
+  <script type="text/javascript" src="../lib/astroids.js"></script>
 </body>
 
 </html>
