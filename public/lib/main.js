@@ -16,38 +16,6 @@ const extensions = [
   "burger"
 ]
 
-const colors = [
-  "#FFB5E8",
-  "#B28DFF",
-  "#DCD3FF",
-  "#AFF8DB",
-  "#BFFCC6",
-  "#FFC9DE",
-  "#FF9CEE",
-  "#C5A3FF",
-  "#A79AFF",
-  "#C4FAF8",
-  "#DBFFD6",
-  "#FFABAB",
-  "#FFCCF9",
-  "#D5AAFF",
-  "#B5B9FF",
-  "#85E3FF",
-  "#F3FFE3",
-  "#FFBEBC",
-  "#FCC2FF",
-  "#ECD4FF",
-  "#97A2FF",
-  "#ACE7FF",
-  "#E7FFAC",
-  "#F6A6FF",
-  "#FBE4FF",
-  "#AFCBFF",
-  "#6EB5FF",
-  "#FFFFD1",
-  "#FFF5BA"
-]
-
 document.title = `teire.${extensions[Math.floor(Math.random() * extensions.length)]}`
 
 let root = document.documentElement;
@@ -108,10 +76,11 @@ function getRGB(str) {
 
 function changeColor() {
   var hero = document.getElementById('hero');
+  // hero.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 
-  hero.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  var backgroundColor = GetProperty('.hero', 'background-color');
 
-  const rgb = getRGB(hero.style.backgroundColor);
+  const rgb = getRGB(backgroundColor);
   if (luminance(rgb.red, rgb.green, rgb.blue) > 0.6) {
     root.style.setProperty('--primary-text-color', '#000');
   }
@@ -153,3 +122,9 @@ document.addEventListener('DOMContentLoaded', function () {
   widepeepoify();
   fooify();
 });
+
+function GetProperty(classOrId, property) {
+  var FirstChar = classOrId.charAt(0); var Remaining = classOrId.substring(1);
+  var elem = (FirstChar == '#') ? document.getElementById(Remaining) : document.getElementsByClassName(Remaining)[0];
+  return window.getComputedStyle(elem, null).getPropertyValue(property);
+}
