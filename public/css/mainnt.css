@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 :root {
     --primary-text-color: #fff;
 }
 
 html {
     overflow-y: auto;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Open Sans", sans-serif;
 }
 
 .main {
@@ -29,6 +39,10 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background-color: #222;
+}
+
+.hero-body .container {
+    max-width: 300px !important;
 }
 
 .menu-list a {
