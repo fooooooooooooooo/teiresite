@@ -21,6 +21,14 @@ document.title = `teire.${extensions[Math.floor(Math.random() * extensions.lengt
 let root = document.documentElement;
 
 function burger() {
+  let burgerButton = document.getElementById('menu-button');
+
+  burgerButton.addEventListener('click', () => {
+    let menu = document.getElementById('menu');
+
+    menu.classList.toggle('is-visible');
+  });
+
   let burger_icon = document.getElementById('burger-icon');
 
   const rand = Math.random();
@@ -43,6 +51,12 @@ function fooify() {
   let foo = document.getElementById('foo');
 
   foo.textContent = 'f' + 'o'.repeat(randomNumber(3, 15));
+}
+
+function teireify() {
+  let teire = document.getElementById('teire');
+
+  teire.textContent = `${Math.random() < 0.5 ? 'T' : 't'}eire`;
 }
 
 function randomNumber(min, max) {
@@ -109,18 +123,12 @@ function stopKeys() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  changeColor();
-  let burgerButton = document.getElementById('menu-button');
-
-  burgerButton.addEventListener('click', () => {
-    let menu = document.getElementById('menu');
-
-    menu.classList.toggle('is-visible');
-  });
-  stopKeys();
-  burger();
-  widepeepoify();
-  fooify();
+  changeColor(); // highest priority, flash of this is very noticeable
+  teireify(); // center of screen, even a brief flash is noticeable
+  widepeepoify(); // same as teireify
+  burger(); // small detail, unlikely to notice
+  stopKeys(); // likely finished before user has a chance to input
+  fooify(); // off screen, lowest prority
 });
 
 function GetProperty(classOrId, property) {
