@@ -39,6 +39,8 @@ function burger() {
 }
 
 function widepeepoify() {
+  if (document.getElementById('main-page') == null)
+    return;
   let widepeepo = document.getElementById('widepeepo');
 
   const rand = Math.random();
@@ -54,6 +56,8 @@ function fooify() {
 }
 
 function teireify() {
+  if (document.getElementById('main-page') == null)
+    return;
   let teire = document.getElementById('teire');
 
   teire.textContent = `${Math.random() < 0.5 ? 'T' : 't'}eire`;
