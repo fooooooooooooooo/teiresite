@@ -1,7 +1,7 @@
 let snakeRunning = false;
 
 function triggerGame() {
-  if (!snakeRunning && document.getElementById('snakePage').textContent == 'true') {
+  if (!snakeRunning && document.getElementById('snake-page').textContent == 'true') {
     snakeRunning = true;
     init();
     document.getElementById('teire').classList.toggle('snaked');
